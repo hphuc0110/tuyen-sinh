@@ -1,0 +1,18 @@
+{
+  "status": 404,
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/vi/layout,_N_T_/vi/blog/layout,_N_T_/vi/blog/[slug]/layout,_N_T_/vi/blog/[slug]/page,_N_T_/vi/blog/hoc-bong-ai-toan-dan"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/vi/blog/$d$slug/__PAGE__",
+    "/vi/blog/$d$slug",
+    "/vi/blog",
+    "/vi",
+    "/_index",
+    "/_head"
+  ]
+}

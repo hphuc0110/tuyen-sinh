@@ -1,0 +1,18 @@
+[00:00:01.631] Server  LOG      ✓ Ready in 1155ms
+[00:00:04.686] Server  LOG      ○ Compiling / ...
+[00:00:05.662] Server  WARN    Image with src "/_next/static/media/ky-su-ai.e2478b7a.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:00:05.927] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.730] Browser WARN    Image with src "/_next/static/media/ky-su-ai.e2478b7a.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:00:06.730] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:06.730] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:06.730] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765883187596}
+[00:00:25.696] Browser WARN    Image with src "/_next/static/media/nghi-quyet.43e2778a.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:00:27.275] Browser WARN    Image with src "/_next/static/media/trung-tam-du-lieu.70ac4c80.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:00:37.280] Browser WARN    Image with src "/_next/static/media/tuyen-dung.dea8ad43.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:00:51.189] Browser WARN    Image with src "/_next/static/media/du-an.63b84759.webp" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
