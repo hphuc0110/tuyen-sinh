@@ -9,24 +9,79 @@ const modules = [
     level: "LEVEL A: NỀN TẢNG & TƯ DUY (Foundation)",
     description: "Trang bị hệ thống kiến thức nền tảng về kỹ thuật và tư duy AI, giúp học viên hiểu rõ bản chất các khái niệm cốt lõi, thuật toán và mô hình cơ bản trong trí tuệ nhân tạo. Giai đoạn này tập trung xây dựng tư duy logic, tư duy giải quyết vấn đề theo hướng dữ liệu, đồng thời củng cố nền tảng lập trình vững chắc để học viên có thể tự tin tiếp cận các nội dung chuyên sâu và ứng dụng AI ở các giai đoạn tiếp theo.",
     items: [
-      { title: "Module 1:", content: "Tổng quan AI & Prompt Engineering" },
-      { title: "Module 2:", content: "Toán học cho Machine Learning" },
+      { 
+        title: "Module 1:", 
+        content: [
+          "Tổng quan về trí tuệ nhân tạo: Lịch sử, xu hướng và ứng dụng thực tế",
+          "Các khái niệm cốt lõi: Machine Learning, Deep Learning, Neural Networks",
+          "Prompt Engineering cơ bản: Kỹ thuật viết prompt hiệu quả cho các mô hình AI",
+          "Làm việc với ChatGPT, Claude và các công cụ AI phổ biến",
+          "Thực hành xây dựng hệ thống AI đơn giản và ứng dụng vào bài toán thực tế"
+        ]
+      },
+      { 
+        title: "Module 2:", 
+        content: [
+          "Toán học cơ bản cho AI: Đại số tuyến tính, Giải tích và Xác suất thống kê",
+          "Vector và ma trận: Các phép toán cơ bản và ứng dụng trong Machine Learning",
+          "Hàm số và đạo hàm: Gradient descent và tối ưu hóa",
+          "Xác suất và phân phối: Bayes Theorem, phân phối chuẩn và ứng dụng",
+          "Thực hành tính toán và giải các bài toán toán học liên quan đến AI"
+        ]
+      },
     ],
   },
   {
     level: "LEVEL B: KỸ THUẬT & ỨNG DỤNG (Implementation)",
     description:"Xây dựng nền tảng vững chắc về Toán học, Python, Data Science và hạ tầng GPU nhằm trang bị đầy đủ công cụ và kỹ năng cần thiết cho quá trình học tập . Giai đoạn này giúp học viên nắm cách xử lý dữ liệu, xây dựng mô hình, tối ưu hiệu năng tính toán và ứng dụng kiến thức vào các bài toán thực tế, tạo tiền đề cho việc phát triển và triển khai các hệ thống AI hiệu quả.",
     items: [
-      { title: "Module 3:", content: "Làm chủ lập trình Python cho AI" },
-      { title: "Module 4:", content: "Làm việc với các mô hình AI tiêu biểu" },
+      { 
+        title: "Module 3:", 
+        content: [
+          "Lập trình Python từ cơ bản đến nâng cao: Cú pháp, cấu trúc dữ liệu và hàm",
+          "Thư viện chuyên dụng: NumPy, Pandas, Matplotlib cho xử lý dữ liệu",
+          "Làm việc với dữ liệu: Đọc, làm sạch, chuyển đổi và phân tích dữ liệu",
+          "Xây dựng pipeline xử lý dữ liệu tự động và tối ưu hóa hiệu năng",
+          "Thực hành xây dựng các script Python cho các tác vụ AI phổ biến"
+        ]
+      },
+      { 
+        title: "Module 4:", 
+        content: [
+          "Giới thiệu các mô hình AI tiêu biểu: GPT, BERT, ResNet, YOLO",
+          "Làm việc với thư viện TensorFlow và PyTorch để xây dựng mô hình",
+          "Fine-tuning mô hình: Cách tùy chỉnh mô hình pre-trained cho bài toán cụ thể",
+          "Đánh giá và tối ưu mô hình: Metrics, validation và hyperparameter tuning",
+          "Triển khai mô hình: Export, deploy và tích hợp vào ứng dụng thực tế"
+        ]
+      },
     ],
   },
   {
     level: "LEVEL C: CHUYÊN SÂU & DỰ ÁN (Project & Certification)",
     description: 
-    "Giúp học viên đào sâu kiến thức chuyên ngành thông qua việc triển khai các dự án AI ứng dụng thực tế, qua đó tổng hợp và vận dụng toàn bộ kiến thức đã học từ nền tảng đến chuyên sâu. Học viên được hướng dẫn xây dựng sản phẩm theo quy trình chuẩn, xử lý dữ liệu, phát triển mô hình đến đánh giá và trình bày kết quả, đồng thời hoàn thiện hồ sơ năng lực và chứng nhận",     items: [
-      { title: "Module 5:", content: "Thực thi dự án thực tế" },
-      { title: "Module 6:", content: "Ôn thi chứng chỉ Nvidia & Bảo vệ đồ án" },
+    "Giúp học viên đào sâu kiến thức chuyên ngành thông qua việc triển khai các dự án AI ứng dụng thực tế, qua đó tổng hợp và vận dụng toàn bộ kiến thức đã học từ nền tảng đến chuyên sâu. Học viên được hướng dẫn xây dựng sản phẩm theo quy trình chuẩn, xử lý dữ liệu, phát triển mô hình đến đánh giá và trình bày kết quả, đồng thời hoàn thiện hồ sơ năng lực và chứng nhận",
+    items: [
+      { 
+        title: "Module 5:", 
+        content: [
+          "Quy trình phát triển dự án AI: Từ ý tưởng đến sản phẩm hoàn chỉnh",
+          "Xây dựng dự án thực tế: Chọn bài toán, thu thập dữ liệu và thiết kế giải pháp",
+          "Phát triển và tối ưu mô hình: Training, evaluation và improvement",
+          "Triển khai sản phẩm: Deploy lên cloud, tạo API và xây dựng giao diện",
+          "Documentation và presentation: Viết tài liệu kỹ thuật và trình bày dự án"
+        ]
+      },
+      { 
+        title: "Module 6:", 
+        content: [
+          "Ôn tập toàn diện kiến thức: Tổng hợp lại các nội dung đã học",
+          "Chuẩn bị thi chứng chỉ Nvidia: Làm quen với format đề và kỹ năng làm bài",
+          "Thực hành các bài thi mẫu và giải đề thi các năm trước",
+          "Bảo vệ đồ án tốt nghiệp: Trình bày dự án và trả lời câu hỏi từ hội đồng",
+          "Hoàn thiện hồ sơ năng lực: Portfolio, GitHub và các chứng chỉ đạt được"
+        ]
+      },
     ],
   },
 ]

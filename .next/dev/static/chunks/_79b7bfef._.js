@@ -942,120 +942,75 @@ var _s = __turbopack_context__.k.signature();
 function FlipCard({ level, description, items, index }) {
     _s();
     const [isFlipped, setIsFlipped] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [cardHeight, setCardHeight] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(400);
+    const backSideRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const frontSideRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const measureRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const frontMeasureRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const FRONT_HEIGHT = 400 // Chiều cao cố định cho front side
+    ;
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "FlipCard.useEffect": ()=>{
+            // Đo chiều cao của back side (mặt có nhiều nội dung hơn)
+            const measureBackHeight = {
+                "FlipCard.useEffect.measureBackHeight": ()=>{
+                    if (measureRef.current) {
+                        const height = measureRef.current.scrollHeight;
+                        // Chỉ cập nhật nếu đang ở trạng thái flipped
+                        if (isFlipped) {
+                            setCardHeight(Math.max(height, FRONT_HEIGHT));
+                        }
+                    }
+                }
+            }["FlipCard.useEffect.measureBackHeight"];
+            // Đo ngay khi component mount
+            measureBackHeight();
+            // Đo lại sau một khoảng thời gian ngắn để đảm bảo DOM đã render xong
+            const timeout = setTimeout(measureBackHeight, 100);
+            return ({
+                "FlipCard.useEffect": ()=>clearTimeout(timeout)
+            })["FlipCard.useEffect"];
+        }
+    }["FlipCard.useEffect"], [
+        items,
+        isFlipped
+    ]);
     const handleClick = ()=>{
-        setIsFlipped(!isFlipped);
+        const newFlippedState = !isFlipped;
+        setIsFlipped(newFlippedState);
+        if (newFlippedState) {
+            // Khi lật sang back side, mở rộng card
+            setTimeout(()=>{
+                if (measureRef.current) {
+                    const height = measureRef.current.scrollHeight;
+                    setCardHeight(Math.max(height, FRONT_HEIGHT));
+                }
+            }, 350); // Đợi một nửa thời gian animation để đo
+        } else {
+            // Khi quay về front side, thu nhỏ về kích thước ban đầu
+            setCardHeight(FRONT_HEIGHT);
+        }
     };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-        initial: {
-            opacity: 0,
-            y: 50
-        },
-        whileInView: {
-            opacity: 1,
-            y: 0
-        },
-        viewport: {
-            once: true
-        },
-        transition: {
-            duration: 0.5,
-            delay: index * 0.2
-        },
-        className: "h-[400px] perspective-1000 cursor-pointer",
-        onClick: handleClick,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-            className: "relative w-full h-full transition-transform duration-700 preserve-3d",
-            animate: {
-                rotateY: isFlipped ? 180 : 0
-            },
-            style: {
-                transformStyle: "preserve-3d"
-            },
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "absolute w-full h-full backface-hidden bg-gradient-to-br from-[#4F8FF6]/10 via-[#4F8FF6]/5 to-white border-4 border-[#4F8FF6]/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between hover:border-[#4F8FF6]/50 transition-all",
-                    style: {
-                        backfaceVisibility: "hidden"
-                    },
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-gradient-to-r from-[#4F8FF6] to-[#3B7AE6] text-white font-bold text-sm px-4 py-2 rounded-lg mb-4 inline-block shadow-md",
-                                    children: level.split(":")[0]
-                                }, void 0, false, {
-                                    fileName: "[project]/components/flip-card.tsx",
-                                    lineNumber: 45,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "font-bold text-xl mb-3 bg-gradient-to-r from-[#4F8FF6] to-[#3B7AE6] bg-clip-text text-transparent",
-                                    children: level.split(":")[1]
-                                }, void 0, false, {
-                                    fileName: "[project]/components/flip-card.tsx",
-                                    lineNumber: 48,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-sm text-gray-700 leading-relaxed",
-                                    children: description
-                                }, void 0, false, {
-                                    fileName: "[project]/components/flip-card.tsx",
-                                    lineNumber: 49,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/flip-card.tsx",
-                            lineNumber: 44,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "text-center",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-xs text-[#4F8FF6] font-semibold",
-                                    children: "Nhấn để xem các Module"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/flip-card.tsx",
-                                    lineNumber: 52,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-2xl mt-2 text-[#4F8FF6]",
-                                    children: "↻"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/flip-card.tsx",
-                                    lineNumber: 53,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/flip-card.tsx",
-                            lineNumber: 51,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/components/flip-card.tsx",
-                    lineNumber: 40,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "absolute w-full h-full backface-hidden bg-gradient-to-br from-[#4F8FF6] via-[#3B7AE6] to-[#2D6BD9] border-4 border-[#4F8FF6] rounded-2xl p-6 shadow-xl",
-                    style: {
-                        backfaceVisibility: "hidden",
-                        transform: "rotateY(180deg)"
-                    },
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "relative",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: measureRef,
+                className: "absolute top-0 left-0 w-full invisible pointer-events-none",
+                style: {
+                    visibility: "hidden"
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "bg-gradient-to-br from-[#4F8FF6] via-[#3B7AE6] to-[#2D6BD9] rounded-2xl p-6 border-4 border-[#4F8FF6]",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "h-full flex flex-col",
+                        className: "flex flex-col",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-white/20 backdrop-blur-sm text-white font-bold text-sm px-4 py-2 rounded-lg mb-4 inline-block border border-white/30",
                                 children: level.split(":")[0]
                             }, void 0, false, {
                                 fileName: "[project]/components/flip-card.tsx",
-                                lineNumber: 66,
+                                lineNumber: 77,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1063,55 +1018,60 @@ function FlipCard({ level, description, items, index }) {
                                 children: "Các Module:"
                             }, void 0, false, {
                                 fileName: "[project]/components/flip-card.tsx",
-                                lineNumber: 69,
+                                lineNumber: 80,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-3 flex-grow",
-                                children: items.map((item, itemIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                        initial: {
-                                            opacity: 0,
-                                            x: -20
-                                        },
-                                        animate: {
-                                            opacity: 1,
-                                            x: 0
-                                        },
-                                        transition: {
-                                            delay: itemIndex * 0.1
-                                        },
+                                className: "space-y-3",
+                                children: items.map((item, itemIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-md border border-white/50",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-gray-900",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-900 mb-2",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-bold text-[#4F8FF6]",
                                                     children: item.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/flip-card.tsx",
-                                                    lineNumber: 80,
+                                                    lineNumber: 88,
                                                     columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                    fileName: "[project]/components/flip-card.tsx",
-                                                    lineNumber: 81,
-                                                    columnNumber: 21
-                                                }, this),
-                                                item.content
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/components/flip-card.tsx",
-                                            lineNumber: 79,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, itemIndex, false, {
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/flip-card.tsx",
+                                                lineNumber: 87,
+                                                columnNumber: 19
+                                            }, this),
+                                            Array.isArray(item.content) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                className: "list-disc list-inside space-y-1.5 text-xs text-gray-800 ml-2",
+                                                children: item.content.map((point, pointIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                        className: "leading-relaxed",
+                                                        children: point
+                                                    }, pointIndex, false, {
+                                                        fileName: "[project]/components/flip-card.tsx",
+                                                        lineNumber: 93,
+                                                        columnNumber: 25
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/flip-card.tsx",
+                                                lineNumber: 91,
+                                                columnNumber: 21
+                                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-gray-800",
+                                                children: item.content
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/flip-card.tsx",
+                                                lineNumber: 97,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, itemIndex, true, {
                                         fileName: "[project]/components/flip-card.tsx",
-                                        lineNumber: 72,
+                                        lineNumber: 83,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/flip-card.tsx",
-                                lineNumber: 70,
+                                lineNumber: 81,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1122,7 +1082,7 @@ function FlipCard({ level, description, items, index }) {
                                         children: "Nhấn để quay lại"
                                     }, void 0, false, {
                                         fileName: "[project]/components/flip-card.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 103,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1130,39 +1090,286 @@ function FlipCard({ level, description, items, index }) {
                                         children: "↻"
                                     }, void 0, false, {
                                         fileName: "[project]/components/flip-card.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 104,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/flip-card.tsx",
-                                lineNumber: 87,
+                                lineNumber: 102,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/flip-card.tsx",
-                        lineNumber: 65,
+                        lineNumber: 76,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/flip-card.tsx",
-                    lineNumber: 58,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/components/flip-card.tsx",
-            lineNumber: 34,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+            }, void 0, false, {
+                fileName: "[project]/components/flip-card.tsx",
+                lineNumber: 70,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                initial: {
+                    opacity: 0,
+                    y: 50
+                },
+                whileInView: {
+                    opacity: 1,
+                    y: 0
+                },
+                viewport: {
+                    once: true
+                },
+                transition: {
+                    duration: 0.5,
+                    delay: index * 0.2
+                },
+                className: "perspective-1000 cursor-pointer",
+                onClick: handleClick,
+                animate: {
+                    height: cardHeight
+                },
+                transition: {
+                    duration: 0.7,
+                    ease: "easeInOut"
+                },
+                style: {
+                    minHeight: FRONT_HEIGHT + "px"
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    className: "relative w-full transition-transform duration-700 preserve-3d",
+                    animate: {
+                        rotateY: isFlipped ? 180 : 0
+                    },
+                    style: {
+                        transformStyle: "preserve-3d",
+                        height: "100%"
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            ref: frontSideRef,
+                            className: "absolute w-full backface-hidden bg-gradient-to-br from-[#4F8FF6]/10 via-[#4F8FF6]/5 to-white border-4 border-[#4F8FF6]/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between hover:border-[#4F8FF6]/50 transition-all",
+                            style: {
+                                backfaceVisibility: "hidden",
+                                height: "100%"
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "bg-gradient-to-r from-[#4F8FF6] to-[#3B7AE6] text-white font-bold text-sm px-4 py-2 rounded-lg mb-4 inline-block shadow-md",
+                                            children: level.split(":")[0]
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/flip-card.tsx",
+                                            lineNumber: 136,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "font-bold text-xl mb-3 bg-gradient-to-r from-[#4F8FF6] to-[#3B7AE6] bg-clip-text text-transparent",
+                                            children: level.split(":")[1]
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/flip-card.tsx",
+                                            lineNumber: 139,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-sm text-gray-700 leading-relaxed",
+                                            children: description
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/flip-card.tsx",
+                                            lineNumber: 140,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/flip-card.tsx",
+                                    lineNumber: 135,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-xs text-[#4F8FF6] font-semibold",
+                                            children: "Nhấn để xem các Module"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/flip-card.tsx",
+                                            lineNumber: 143,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-2xl mt-2 text-[#4F8FF6]",
+                                            children: "↻"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/flip-card.tsx",
+                                            lineNumber: 144,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/flip-card.tsx",
+                                    lineNumber: 142,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/flip-card.tsx",
+                            lineNumber: 127,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            ref: backSideRef,
+                            className: "absolute w-full backface-hidden bg-gradient-to-br from-[#4F8FF6] via-[#3B7AE6] to-[#2D6BD9] border-4 border-[#4F8FF6] rounded-2xl p-6 shadow-xl",
+                            style: {
+                                backfaceVisibility: "hidden",
+                                transform: "rotateY(180deg)",
+                                height: "100%"
+                            },
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "h-full flex flex-col",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-white/20 backdrop-blur-sm text-white font-bold text-sm px-4 py-2 rounded-lg mb-4 inline-block border border-white/30",
+                                        children: level.split(":")[0]
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/flip-card.tsx",
+                                        lineNumber: 159,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                        className: "font-bold text-white mb-4 text-lg",
+                                        children: "Các Module:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/flip-card.tsx",
+                                        lineNumber: 162,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-3 flex-grow overflow-hidden",
+                                        children: items.map((item, itemIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                initial: {
+                                                    opacity: 0,
+                                                    x: -20
+                                                },
+                                                animate: {
+                                                    opacity: 1,
+                                                    x: 0
+                                                },
+                                                transition: {
+                                                    delay: itemIndex * 0.1
+                                                },
+                                                className: "bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-md border border-white/50",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-gray-900 mb-2",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "font-bold text-[#4F8FF6]",
+                                                            children: item.title
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/flip-card.tsx",
+                                                            lineNumber: 173,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/flip-card.tsx",
+                                                        lineNumber: 172,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    Array.isArray(item.content) ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                                        className: "list-disc list-inside space-y-1.5 text-xs text-gray-800 ml-2",
+                                                        children: item.content.map((point, pointIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                                className: "leading-relaxed",
+                                                                children: point
+                                                            }, pointIndex, false, {
+                                                                fileName: "[project]/components/flip-card.tsx",
+                                                                lineNumber: 178,
+                                                                columnNumber: 27
+                                                            }, this))
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/flip-card.tsx",
+                                                        lineNumber: 176,
+                                                        columnNumber: 23
+                                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-xs text-gray-800",
+                                                        children: item.content
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/flip-card.tsx",
+                                                        lineNumber: 182,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, itemIndex, true, {
+                                                fileName: "[project]/components/flip-card.tsx",
+                                                lineNumber: 165,
+                                                columnNumber: 19
+                                            }, this))
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/flip-card.tsx",
+                                        lineNumber: 163,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-center mt-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-white/90 font-semibold",
+                                                children: "Nhấn để quay lại"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/flip-card.tsx",
+                                                lineNumber: 188,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-2xl mt-1 text-white",
+                                                children: "↻"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/flip-card.tsx",
+                                                lineNumber: 189,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/flip-card.tsx",
+                                        lineNumber: 187,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/flip-card.tsx",
+                                lineNumber: 158,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/flip-card.tsx",
+                            lineNumber: 149,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/flip-card.tsx",
+                    lineNumber: 121,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/flip-card.tsx",
+                lineNumber: 110,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/components/flip-card.tsx",
-        lineNumber: 26,
+        lineNumber: 68,
         columnNumber: 5
     }, this);
 }
-_s(FlipCard, "9NPh+N5IPOCpZ+AUtVyw7TZ32I8=");
+_s(FlipCard, "HlJEXwvvI6umyAZP6yMbbTLa6lQ=");
 _c = FlipCard;
 var _c;
 __turbopack_context__.k.register(_c, "FlipCard");
@@ -1191,11 +1398,23 @@ const modules = [
         items: [
             {
                 title: "Module 1:",
-                content: "Tổng quan AI & Prompt Engineering"
+                content: [
+                    "Tổng quan về trí tuệ nhân tạo: Lịch sử, xu hướng và ứng dụng thực tế",
+                    "Các khái niệm cốt lõi: Machine Learning, Deep Learning, Neural Networks",
+                    "Prompt Engineering cơ bản: Kỹ thuật viết prompt hiệu quả cho các mô hình AI",
+                    "Làm việc với ChatGPT, Claude và các công cụ AI phổ biến",
+                    "Thực hành xây dựng hệ thống AI đơn giản và ứng dụng vào bài toán thực tế"
+                ]
             },
             {
                 title: "Module 2:",
-                content: "Toán học cho Machine Learning"
+                content: [
+                    "Toán học cơ bản cho AI: Đại số tuyến tính, Giải tích và Xác suất thống kê",
+                    "Vector và ma trận: Các phép toán cơ bản và ứng dụng trong Machine Learning",
+                    "Hàm số và đạo hàm: Gradient descent và tối ưu hóa",
+                    "Xác suất và phân phối: Bayes Theorem, phân phối chuẩn và ứng dụng",
+                    "Thực hành tính toán và giải các bài toán toán học liên quan đến AI"
+                ]
             }
         ]
     },
@@ -1205,11 +1424,23 @@ const modules = [
         items: [
             {
                 title: "Module 3:",
-                content: "Làm chủ lập trình Python cho AI"
+                content: [
+                    "Lập trình Python từ cơ bản đến nâng cao: Cú pháp, cấu trúc dữ liệu và hàm",
+                    "Thư viện chuyên dụng: NumPy, Pandas, Matplotlib cho xử lý dữ liệu",
+                    "Làm việc với dữ liệu: Đọc, làm sạch, chuyển đổi và phân tích dữ liệu",
+                    "Xây dựng pipeline xử lý dữ liệu tự động và tối ưu hóa hiệu năng",
+                    "Thực hành xây dựng các script Python cho các tác vụ AI phổ biến"
+                ]
             },
             {
                 title: "Module 4:",
-                content: "Làm việc với các mô hình AI tiêu biểu"
+                content: [
+                    "Giới thiệu các mô hình AI tiêu biểu: GPT, BERT, ResNet, YOLO",
+                    "Làm việc với thư viện TensorFlow và PyTorch để xây dựng mô hình",
+                    "Fine-tuning mô hình: Cách tùy chỉnh mô hình pre-trained cho bài toán cụ thể",
+                    "Đánh giá và tối ưu mô hình: Metrics, validation và hyperparameter tuning",
+                    "Triển khai mô hình: Export, deploy và tích hợp vào ứng dụng thực tế"
+                ]
             }
         ]
     },
@@ -1219,11 +1450,23 @@ const modules = [
         items: [
             {
                 title: "Module 5:",
-                content: "Thực thi dự án thực tế"
+                content: [
+                    "Quy trình phát triển dự án AI: Từ ý tưởng đến sản phẩm hoàn chỉnh",
+                    "Xây dựng dự án thực tế: Chọn bài toán, thu thập dữ liệu và thiết kế giải pháp",
+                    "Phát triển và tối ưu mô hình: Training, evaluation và improvement",
+                    "Triển khai sản phẩm: Deploy lên cloud, tạo API và xây dựng giao diện",
+                    "Documentation và presentation: Viết tài liệu kỹ thuật và trình bày dự án"
+                ]
             },
             {
                 title: "Module 6:",
-                content: "Ôn thi chứng chỉ Nvidia & Bảo vệ đồ án"
+                content: [
+                    "Ôn tập toàn diện kiến thức: Tổng hợp lại các nội dung đã học",
+                    "Chuẩn bị thi chứng chỉ Nvidia: Làm quen với format đề và kỹ năng làm bài",
+                    "Thực hành các bài thi mẫu và giải đề thi các năm trước",
+                    "Bảo vệ đồ án tốt nghiệp: Trình bày dự án và trả lời câu hỏi từ hội đồng",
+                    "Hoàn thiện hồ sơ năng lực: Portfolio, GitHub và các chứng chỉ đạt được"
+                ]
             }
         ]
     }
@@ -1249,14 +1492,14 @@ function RoadmapSection() {
                         "LỘ TRÌNH ĐÀO TẠO 360 GIỜ:",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                             fileName: "[project]/components/roadmap-section.tsx",
-                            lineNumber: 46,
+                            lineNumber: 101,
                             columnNumber: 11
                         }, this),
                         "TỪ NỀN TẢNG ĐẾN CHỨNG CHỈ QUỐC TẾ"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/roadmap-section.tsx",
-                    lineNumber: 39,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1268,23 +1511,23 @@ function RoadmapSection() {
                             index: levelIndex
                         }, levelIndex, false, {
                             fileName: "[project]/components/roadmap-section.tsx",
-                            lineNumber: 52,
+                            lineNumber: 107,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/roadmap-section.tsx",
-                    lineNumber: 50,
+                    lineNumber: 105,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/roadmap-section.tsx",
-            lineNumber: 37,
+            lineNumber: 92,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/roadmap-section.tsx",
-        lineNumber: 36,
+        lineNumber: 91,
         columnNumber: 5
     }, this);
 }
