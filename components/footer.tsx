@@ -104,7 +104,8 @@ export default function Footer() {
                 className="flex items-start gap-3"
               >
                 <div className="w-3 h-3 bg-[#4F8FF6] rounded-full mt-1.5 flex-shrink-0 shadow-md" />
-                <p className="text-base md:text-lg font-semibold text-[#4F8FF6]">Địa chỉ: 1 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội</p>
+                <p className="text-base md:text-lg font-semibold text-[#4F8FF6]">Địa chỉ: 1 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội <br />                 <p className="text-base md:text-lg font-semibold text-[#4F8FF6]">Địa chỉ: 1 Đ. Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</p></p>
+                
               </motion.div>
             </div>
 
