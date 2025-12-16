@@ -1140,7 +1140,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$flip$2d$card$2
 const modules = [
     {
         level: "LEVEL A: NỀN TẢNG & TƯ DUY (Foundation)",
-        description: "Trang bị nền tảng kỹ thuật và tư duy AI, tập trung vào các lý thuyết cơ bản và xây dựng nền tảng lập trình vững chắc cho những bước tiếp tục sau.",
+        description: "Trang bị hệ thống kiến thức nền tảng về kỹ thuật và tư duy AI, giúp học viên hiểu rõ bản chất các khái niệm cốt lõi, thuật toán và mô hình cơ bản trong trí tuệ nhân tạo. Giai đoạn này tập trung xây dựng tư duy logic, tư duy giải quyết vấn đề theo hướng dữ liệu, đồng thời củng cố nền tảng lập trình vững chắc để học viên có thể tự tin tiếp cận các nội dung chuyên sâu và ứng dụng AI ở các giai đoạn tiếp theo.",
         items: [
             {
                 title: "Module 1:",
@@ -1154,7 +1154,7 @@ const modules = [
     },
     {
         level: "LEVEL B: KỸ THUẬT & ỨNG DỤNG (Implementation)",
-        description: "Xây dựng nền tảng Toán – Python – Data Science – GPU cho công cụ học tập các chuyên về AI/DS chuyên sâu.",
+        description: "Xây dựng nền tảng vững chắc về Toán học, Python, Data Science và hạ tầng GPU nhằm trang bị đầy đủ công cụ và kỹ năng cần thiết cho quá trình học tập . Giai đoạn này giúp học viên nắm cách xử lý dữ liệu, xây dựng mô hình, tối ưu hiệu năng tính toán và ứng dụng kiến thức vào các bài toán thực tế, tạo tiền đề cho việc phát triển và triển khai các hệ thống AI hiệu quả.",
         items: [
             {
                 title: "Module 3:",
@@ -1168,7 +1168,7 @@ const modules = [
     },
     {
         level: "LEVEL C: CHUYÊN SÂU & DỰ ÁN (Project & Certification)",
-        description: "Giúp học sinh hoàn thiện sản phẩm AI ứng dụng (capstone) đảm bảo toàn bộ kiến thức đã học.",
+        description: "Giúp học viên đào sâu kiến thức chuyên ngành thông qua việc triển khai các dự án AI ứng dụng thực tế, qua đó tổng hợp và vận dụng toàn bộ kiến thức đã học từ nền tảng đến chuyên sâu. Học viên được hướng dẫn xây dựng sản phẩm theo quy trình chuẩn, xử lý dữ liệu, phát triển mô hình đến đánh giá và trình bày kết quả, đồng thời hoàn thiện hồ sơ năng lực và chứng nhận",
         items: [
             {
                 title: "Module 5:",
@@ -1202,14 +1202,14 @@ function RoadmapSection() {
                         "LỘ TRÌNH ĐÀO TẠO 360 GIỜ:",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                             fileName: "[project]/components/roadmap-section.tsx",
-                            lineNumber: 48,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, this),
                         "TỪ NỀN TẢNG ĐẾN CHỨNG CHỈ QUỐC TẾ"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/roadmap-section.tsx",
-                    lineNumber: 41,
+                    lineNumber: 39,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1221,23 +1221,23 @@ function RoadmapSection() {
                             index: levelIndex
                         }, levelIndex, false, {
                             fileName: "[project]/components/roadmap-section.tsx",
-                            lineNumber: 54,
+                            lineNumber: 52,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/roadmap-section.tsx",
-                    lineNumber: 52,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/roadmap-section.tsx",
-            lineNumber: 39,
+            lineNumber: 37,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/roadmap-section.tsx",
-        lineNumber: 38,
+        lineNumber: 36,
         columnNumber: 5
     }, this);
 }
@@ -1400,7 +1400,7 @@ function Footer() {
                                             once: true
                                         },
                                         transition: {
-                                            delay: 0.3
+                                            delay: 0.4
                                         },
                                         className: "flex items-start gap-3",
                                         children: [
@@ -1412,8 +1412,8 @@ function Footer() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base md:text-lg text-gray-700",
-                                                children: "Inbox để tìm hiểu chi tiết về khóa học"
+                                                className: "text-base md:text-lg font-semibold text-[#4F8FF6]",
+                                                children: "Hotline: 099 696 3399"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/footer.tsx",
                                                 lineNumber: 85,
@@ -1451,49 +1451,11 @@ function Footer() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-base md:text-lg font-semibold text-[#4F8FF6]",
-                                                children: "Hotline: 099 696 3399"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/footer.tsx",
-                                                lineNumber: 96,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/footer.tsx",
-                                        lineNumber: 88,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                        initial: {
-                                            opacity: 0,
-                                            x: -20
-                                        },
-                                        whileInView: {
-                                            opacity: 1,
-                                            x: 0
-                                        },
-                                        viewport: {
-                                            once: true
-                                        },
-                                        transition: {
-                                            delay: 0.4
-                                        },
-                                        className: "flex items-start gap-3",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-3 h-3 bg-[#4F8FF6] rounded-full mt-1.5 flex-shrink-0 shadow-md"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/footer.tsx",
-                                                lineNumber: 106,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-base md:text-lg font-semibold text-[#4F8FF6]",
                                                 children: [
                                                     "Địa chỉ: 1 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội ",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 96,
                                                         columnNumber: 130
                                                     }, this),
                                                     "                 ",
@@ -1502,19 +1464,19 @@ function Footer() {
                                                         children: "Địa chỉ: 1 Đ. Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 96,
                                                         columnNumber: 153
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/footer.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 96,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/footer.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 88,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -1541,22 +1503,22 @@ function Footer() {
                                             children: "Đăng ký ngay!"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 112,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/footer.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 111,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 117,
+                                    lineNumber: 106,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/footer.tsx",
-                                lineNumber: 112,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -1585,12 +1547,12 @@ function Footer() {
                         children: "© 2025 AI-57. Khóa học Kỹ sư AI Toàn năng dành cho Tài năng trẻ."
                     }, void 0, false, {
                         fileName: "[project]/components/footer.tsx",
-                        lineNumber: 137,
+                        lineNumber: 126,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/footer.tsx",
-                    lineNumber: 131,
+                    lineNumber: 120,
                     columnNumber: 9
                 }, this)
             ]

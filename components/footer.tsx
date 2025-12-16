@@ -78,17 +78,6 @@ export default function Footer() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex items-start gap-3"
-              >
-                <div className="w-3 h-3 bg-[#4F8FF6] rounded-full mt-1.5 flex-shrink-0 shadow-md" />
-                <p className="text-base md:text-lg text-gray-700">Inbox để tìm hiểu chi tiết về khóa học</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
                 className="flex items-start gap-3"
               >
