@@ -99,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "D:\\ai57-webinar",
+    "outputFileTracingRoot": "E:\\PREP\\tuyen-sinh",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -289,11 +289,11 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs",
     "turbopack": {
-      "root": "D:\\ai57-webinar"
+      "root": "E:\\PREP\\tuyen-sinh"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "D:\\ai57-webinar",
+  "appDir": "E:\\PREP\\tuyen-sinh",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",
