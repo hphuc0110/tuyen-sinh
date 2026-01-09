@@ -7,10 +7,12 @@ import FlipCard from "./flip-card"
 const modules = [
   {
     level: "LEVEL A: NỀN TẢNG & TƯ DUY (Foundation)",
-    description: "Trang bị hệ thống kiến thức nền tảng về kỹ thuật và tư duy AI, giúp học viên hiểu rõ bản chất các khái niệm cốt lõi, thuật toán và mô hình cơ bản trong trí tuệ nhân tạo. Giai đoạn này tập trung xây dựng tư duy logic, tư duy giải quyết vấn đề theo hướng dữ liệu, đồng thời củng cố nền tảng lập trình vững chắc để học viên có thể tự tin tiếp cận các nội dung chuyên sâu và ứng dụng AI ở các giai đoạn tiếp theo.",
+    description: [`Trang bị nền tảng kiến thức cốt lõi và tư duy AI theo chuẩn NVIDIA, giúp học viên hiểu đúng bản chất trí tuệ nhân tạo, dữ liệu và tính toán song song trên GPU.`,
+      `Giai đoạn này tập trung hình thành tư duy logic, tư duy dữ liệu và khả năng đọc – hiểu các khái niệm nền tảng trong hệ sinh thái NVIDIA, tạo tiền đề để tiếp cận các nội dung AI tạo sinh và hạ tầng GPU ở các cấp độ tiếp theo.`,
+    ],
     items: [
-      { 
-        title: "Module 1:", 
+      {
+        title: "Module 1:",
         content: [
           "Tổng quan về trí tuệ nhân tạo: Lịch sử, xu hướng và ứng dụng thực tế",
           "Các khái niệm cốt lõi: Machine Learning, Deep Learning, Neural Networks",
@@ -19,8 +21,8 @@ const modules = [
           "Thực hành xây dựng hệ thống AI đơn giản và ứng dụng vào bài toán thực tế"
         ]
       },
-      { 
-        title: "Module 2:", 
+      {
+        title: "Module 2:",
         content: [
           "Toán học cơ bản cho AI: Đại số tuyến tính, Giải tích và Xác suất thống kê",
           "Vector và ma trận: Các phép toán cơ bản và ứng dụng trong Machine Learning",
@@ -33,10 +35,14 @@ const modules = [
   },
   {
     level: "LEVEL B: KỸ THUẬT & ỨNG DỤNG (Implementation)",
-    description:"Xây dựng nền tảng vững chắc về Toán học, Python, Data Science và hạ tầng GPU nhằm trang bị đầy đủ công cụ và kỹ năng cần thiết cho quá trình học tập . Giai đoạn này giúp học viên nắm cách xử lý dữ liệu, xây dựng mô hình, tối ưu hiệu năng tính toán và ứng dụng kiến thức vào các bài toán thực tế, tạo tiền đề cho việc phát triển và triển khai các hệ thống AI hiệu quả.",
+    description: [
+      `Học viên được đào tạo bài bản về Python, Data Science, AI tạo sinh và hạ tầng GPU theo cách tiếp cận của NVIDIA.`,
+      `Nội dung tập trung vào việc xử lý dữ liệu, xây dựng và triển khai mô hình AI, làm quen với quy trình tối ưu hiệu năng tính toán và ứng dụng AI vào các bài toán thực tế.`,
+      `Thông qua các bài lab và bài tập mô phỏng, học viên từng bước tiếp cận cách NVIDIA xây dựng, tối ưu và vận hành các hệ thống AI hiện đại.`
+    ],
     items: [
-      { 
-        title: "Module 3:", 
+      {
+        title: "Module 3:",
         content: [
           "Lập trình Python từ cơ bản đến nâng cao: Cú pháp, cấu trúc dữ liệu và hàm",
           "Thư viện chuyên dụng: NumPy, Pandas, Matplotlib cho xử lý dữ liệu",
@@ -45,8 +51,8 @@ const modules = [
           "Thực hành xây dựng các script Python cho các tác vụ AI phổ biến"
         ]
       },
-      { 
-        title: "Module 4:", 
+      {
+        title: "Module 4:",
         content: [
           "Giới thiệu các mô hình AI tiêu biểu: GPT, BERT, ResNet, YOLO",
           "Làm việc với thư viện TensorFlow và PyTorch để xây dựng mô hình",
@@ -59,11 +65,13 @@ const modules = [
   },
   {
     level: "LEVEL C: CHUYÊN SÂU & DỰ ÁN (Project & Certification)",
-    description: 
-    "Giúp học viên đào sâu kiến thức chuyên ngành thông qua việc triển khai các dự án AI ứng dụng thực tế, qua đó tổng hợp và vận dụng toàn bộ kiến thức đã học từ nền tảng đến chuyên sâu. Học viên được hướng dẫn xây dựng sản phẩm theo quy trình chuẩn, xử lý dữ liệu, phát triển mô hình đến đánh giá và trình bày kết quả, đồng thời hoàn thiện hồ sơ năng lực và chứng nhận",
+    description: [
+      `Tập trung giải quyết các bài toán AI thực tế có độ phức tạp cao và mô phỏng sát kỳ thi chính thức của NVIDIA. Học viên được hướng dẫn xây dựng và tối ưu sản phẩm theo chuẩn NVIDIA Deep Learning Institute, từ huấn luyện mô hình, đánh giá đến tối ưu chuyên sâu.`,
+      `Song song, học viên hoàn thiện portfolio năng lực và luyện Mock Test bám sát cấu trúc đề thi, sẵn sàng chinh phục các chứng chỉ NVIDIA cấp độ Professional.`
+    ],
     items: [
-      { 
-        title: "Module 5:", 
+      {
+        title: "Module 5:",
         content: [
           "Quy trình phát triển dự án AI: Từ ý tưởng đến sản phẩm hoàn chỉnh",
           "Xây dựng dự án thực tế: Chọn bài toán, thu thập dữ liệu và thiết kế giải pháp",
@@ -72,8 +80,8 @@ const modules = [
           "Documentation và presentation: Viết tài liệu kỹ thuật và trình bày dự án"
         ]
       },
-      { 
-        title: "Module 6:", 
+      {
+        title: "Module 6:",
         content: [
           "Ôn tập toàn diện kiến thức: Tổng hợp lại các nội dung đã học",
           "Chuẩn bị thi chứng chỉ Nvidia: Làm quen với format đề và kỹ năng làm bài",

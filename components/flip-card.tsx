@@ -1,5 +1,6 @@
 "use client"
 
+import { useIsMobile } from "@/hooks/use-mobile"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
 
@@ -10,20 +11,25 @@ interface Module {
 
 interface FlipCardProps {
   level: string
-  description: string
+  description: string[]
   items: Module[]
   index: number
 }
 
 export default function FlipCard({ level, description, items, index }: FlipCardProps) {
+  const isMobile = useIsMobile()
+  const FRONT_HEIGHT = isMobile ? 500 : 500 // Chiều cao cố định cho front side
   const [isFlipped, setIsFlipped] = useState(false)
-  const [cardHeight, setCardHeight] = useState(400)
+  const [cardHeight, setCardHeight] = useState(isMobile ? 500 : 500)
   const backSideRef = useRef<HTMLDivElement>(null)
   const frontSideRef = useRef<HTMLDivElement>(null)
   const measureRef = useRef<HTMLDivElement>(null)
   const frontMeasureRef = useRef<HTMLDivElement>(null)
 
-  const FRONT_HEIGHT = 400 // Chiều cao cố định cho front side
+  useEffect(() => {
+    setCardHeight(isMobile ? 500 : 500)
+  }, [isMobile])
+
 
   useEffect(() => {
     // Đo chiều cao của back side (mặt có nhiều nội dung hơn)
@@ -36,20 +42,20 @@ export default function FlipCard({ level, description, items, index }: FlipCardP
         }
       }
     }
-    
+
     // Đo ngay khi component mount
     measureBackHeight()
-    
+
     // Đo lại sau một khoảng thời gian ngắn để đảm bảo DOM đã render xong
     const timeout = setTimeout(measureBackHeight, 100)
-    
+
     return () => clearTimeout(timeout)
   }, [items, isFlipped])
 
   const handleClick = () => {
     const newFlippedState = !isFlipped
     setIsFlipped(newFlippedState)
-    
+
     if (newFlippedState) {
       // Khi lật sang back side, mở rộng card
       setTimeout(() => {
@@ -115,7 +121,6 @@ export default function FlipCard({ level, description, items, index }: FlipCardP
         className="perspective-1000 cursor-pointer"
         onClick={handleClick}
         animate={{ height: cardHeight }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
         style={{ minHeight: FRONT_HEIGHT + "px" }}
       >
         <motion.div
@@ -126,8 +131,8 @@ export default function FlipCard({ level, description, items, index }: FlipCardP
           {/* Front Side */}
           <div
             ref={frontSideRef}
-            className="absolute w-full backface-hidden bg-gradient-to-br from-[#4F8FF6]/10 via-[#4F8FF6]/5 to-white border-4 border-[#4F8FF6]/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between hover:border-[#4F8FF6]/50 transition-all"
-            style={{ 
+            className="absolute overflow-hidden  w-full backface-hidden bg-gradient-to-br from-[#4F8FF6]/10 via-[#4F8FF6]/5 to-white border-4 border-[#4F8FF6]/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between hover:border-[#4F8FF6]/50 transition-all"
+            style={{
               backfaceVisibility: "hidden",
               height: "100%"
             }}
@@ -137,7 +142,10 @@ export default function FlipCard({ level, description, items, index }: FlipCardP
                 {level.split(":")[0]}
               </div>
               <h3 className="font-bold text-xl mb-3 bg-gradient-to-r from-[#4F8FF6] to-[#3B7AE6] bg-clip-text text-transparent">{level.split(":")[1]}</h3>
-              <p className="text-sm text-gray-700 leading-relaxed">{description}</p>
+              <div className="text-sm text-gray-700 leading-relaxed ">
+                {description.map((item, index) => (
+                  <p key={index} className="mb-2 leading-relaxed m-0! ">{item}</p>
+                ))}</div>
             </div>
             <div className="text-center">
               <p className="text-xs text-[#4F8FF6] font-semibold">Nhấn để xem các Module</p>

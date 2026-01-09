@@ -85,7 +85,7 @@ const LearningPathSection = ({
           >
             LỘ TRÌNH TRỞ THÀNH KỸ SƯ AI TOÀN NĂNG
           </motion.h2>
-          
+
         </motion.div>
 
         {/* Image Full Width Container - Responsive Desktop/Mobile */}
