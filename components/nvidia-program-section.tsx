@@ -59,7 +59,19 @@ const NvidiaProgramSection = () => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97, y: 32 }}
+          animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.16 }}
+        >
+          <Image
+            src={nvidiaCompany}
+            alt="NVIDIA Company"
+            className="absolute h-full w-full object-cover opacity-20 bottom-0 left-0 z-10 rounded-xl"
+            priority
+          />
 
+        </motion.div>
 
         {/* Two cards: Learning Path & Certification */}
         <motion.div
@@ -76,19 +88,7 @@ const NvidiaProgramSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.97, y: 32 }}
-              animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.16 }}
-            >
-              <Image
-                src={nvidiaCompany}
-                alt="NVIDIA Company"
-                className="absolute h-full w-full object-cover opacity-20 bottom-0 left-0 z-10 rounded-xl"
-                priority
-              />
 
-            </motion.div>
             {/* Title */}
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
