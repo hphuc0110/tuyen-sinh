@@ -18,16 +18,16 @@ interface FlipCardProps {
 
 export default function FlipCard({ level, description, items, index }: FlipCardProps) {
   const isMobile = useIsMobile()
-  const FRONT_HEIGHT = isMobile ? 500 : 500 // Chiều cao cố định cho front side
+  const FRONT_HEIGHT = 400 // Chiều cao cố định cho front side
   const [isFlipped, setIsFlipped] = useState(false)
-  const [cardHeight, setCardHeight] = useState(isMobile ? 500 : 500)
+  const [cardHeight, setCardHeight] = useState(400)
   const backSideRef = useRef<HTMLDivElement>(null)
   const frontSideRef = useRef<HTMLDivElement>(null)
   const measureRef = useRef<HTMLDivElement>(null)
   const frontMeasureRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setCardHeight(isMobile ? 500 : 500)
+    setCardHeight(400)
   }, [isMobile])
 
 

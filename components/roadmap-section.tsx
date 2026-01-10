@@ -7,8 +7,8 @@ import FlipCard from "./flip-card"
 const modules = [
   {
     level: "LEVEL A: NỀN TẢNG & TƯ DUY (Foundation)",
-    description: [`Trang bị nền tảng kiến thức cốt lõi và tư duy AI theo chuẩn NVIDIA, giúp học viên hiểu đúng bản chất trí tuệ nhân tạo, dữ liệu và tính toán song song trên GPU.`,
-      `Giai đoạn này tập trung hình thành tư duy logic, tư duy dữ liệu và khả năng đọc – hiểu các khái niệm nền tảng trong hệ sinh thái NVIDIA, tạo tiền đề để tiếp cận các nội dung AI tạo sinh và hạ tầng GPU ở các cấp độ tiếp theo.`,
+    description: [
+      `Trang bị kiến thức cốt lõi và tư duy AI theo chuẩn NVIDIA, giúp học viên hiểu bản chất AI, dữ liệu, GPU và hình thành tư duy logic, tư duy dữ liệu làm nền tảng cho các nội dung nâng cao.`,
     ],
     items: [
       {
@@ -36,9 +36,7 @@ const modules = [
   {
     level: "LEVEL B: KỸ THUẬT & ỨNG DỤNG (Implementation)",
     description: [
-      `Học viên được đào tạo bài bản về Python, Data Science, AI tạo sinh và hạ tầng GPU theo cách tiếp cận của NVIDIA.`,
-      `Nội dung tập trung vào việc xử lý dữ liệu, xây dựng và triển khai mô hình AI, làm quen với quy trình tối ưu hiệu năng tính toán và ứng dụng AI vào các bài toán thực tế.`,
-      `Thông qua các bài lab và bài tập mô phỏng, học viên từng bước tiếp cận cách NVIDIA xây dựng, tối ưu và vận hành các hệ thống AI hiện đại.`
+      `Đào tạo bài bản về Python, Data Science, AI tạo sinh và hạ tầng GPU; tập trung xử lý dữ liệu, xây dựng – triển khai mô hình AI, tối ưu hiệu năng và ứng dụng AI vào các bài toán thực tế thông qua hệ thống lab mô phỏng.`
     ],
     items: [
       {
@@ -66,8 +64,7 @@ const modules = [
   {
     level: "LEVEL C: CHUYÊN SÂU & DỰ ÁN (Project & Certification)",
     description: [
-      `Tập trung giải quyết các bài toán AI thực tế có độ phức tạp cao và mô phỏng sát kỳ thi chính thức của NVIDIA. Học viên được hướng dẫn xây dựng và tối ưu sản phẩm theo chuẩn NVIDIA Deep Learning Institute, từ huấn luyện mô hình, đánh giá đến tối ưu chuyên sâu.`,
-      `Song song, học viên hoàn thiện portfolio năng lực và luyện Mock Test bám sát cấu trúc đề thi, sẵn sàng chinh phục các chứng chỉ NVIDIA cấp độ Professional.`
+      `Giải quyết các bài toán AI phức tạp theo chuẩn NVIDIA DLI, luyện thi sát đề thật, tối ưu mô hình chuyên sâu, đồng thời hoàn thiện portfolio và Mock Test để sẵn sàng chinh phục chứng chỉ NVIDIA Professional.`
     ],
     items: [
       {
