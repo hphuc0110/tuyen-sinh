@@ -1,9 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
+import { Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
+
+const montserrat = Montserrat({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-montserrat",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "AI-57 - Khóa học Kỹ sư AI Toàn năng",
@@ -19,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className={`font-sans antialiased`}>
+      <body className={`${montserrat.variable} font-sans antialiased`}>
         <Script
           id="facebook-pixel"
           strategy="afterInteractive"

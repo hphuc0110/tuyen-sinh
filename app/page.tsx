@@ -11,6 +11,9 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <div className="relative flex flex-col gap-8 bg-black/40 py-8 lg:gap-16 lg:py-16">
+        <NvidiaProgramSection />
+      </div>
       <RoadmapSection />
       <LearningPathSection
         desktopHeight="450px"
@@ -19,9 +22,7 @@ export default function HomePage() {
         mobileMinHeight="120px"
         mobileMaxHeight="200px"
         fullWidth={false} />
-      <div className="relative flex flex-col gap-8 bg-black py-8 lg:gap-16 lg:py-16">
-        <NvidiaProgramSection />
-      </div>
+
       <NewsSection />
       <Footer />
     </main>

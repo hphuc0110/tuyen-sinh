@@ -67,7 +67,7 @@ const NvidiaProgramSection = () => {
           <Image
             src={nvidiaCompany}
             alt="NVIDIA Company"
-            className="absolute h-full w-full object-cover opacity-20 bottom-0 left-0 z-10 rounded-xl"
+            className="absolute h-full w-full object-cover opacity-10 bottom-0 left-0 z-10 blur-xs"
             priority
           />
 
@@ -75,7 +75,7 @@ const NvidiaProgramSection = () => {
 
         {/* Two cards: Learning Path & Certification */}
         <motion.div
-          className="mx-auto flex flex-col gap-5 relative py-6 lg:py-12"
+          className="mx-auto flex flex-col gap-5 relative py-6  lg:py-12"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.17 }}
@@ -83,7 +83,7 @@ const NvidiaProgramSection = () => {
 
           {/* Certification badges placeholder */}
           <motion.div
-            className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 z-20"
+            className="container bg-white mx-auto mt-8 flex flex-col items-center justify-center space-y-6 z-20 rounded-xl p-8"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -94,7 +94,7 @@ const NvidiaProgramSection = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="mb-1 text-center text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl"
+              className="mb-1 text-center text-3xl font-bold leading-tight text-black md:text-4xl lg:text-5xl"
             >
               <span>
                 CHỨNG CHỈ <span className="text-[#88C200]">NVIDIA</span>
@@ -105,9 +105,9 @@ const NvidiaProgramSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="max-w-xl text-pretty text-center text-base text-gray-400"
+              className="max-w-xl text-pretty text-center text-base text-black"
             >
-              <span className="font-bold text-white">Chứng chỉ</span> là bằng chứng cụ thể về
+              <span className="font-bold text-black">Chứng chỉ</span> là bằng chứng cụ thể về
               chuyên môn, năng lực và cam kết học hỏi không ngừng của bạn. Hãy chứng
               minh kỹ năng của bạn và nâng tầm sự nghiệp bằng cách nhận{" "}
               <span className="font-bold text-[#88C200]">chứng chỉ từ NVIDIA.</span>
@@ -116,7 +116,7 @@ const NvidiaProgramSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.48 }}
-              className="text-center font-bold text-gray-400"
+              className="text-center font-bold text-black"
             >
               Là sự cam kết của chương trình AI57 dành cho bạn, một chứng chỉ có tầm
               ảnh hưởng và đảm bảo vững chắc cho tương lai.{" "}
@@ -132,7 +132,7 @@ const NvidiaProgramSection = () => {
                   className="flex items-center justify-center cursor-pointer"
                   onClick={() => handleIconClick(i)}
                 >
-                  <Icon icon={icon as any} className="h-40 w-40 bg-white p-4 rounded-lg shadow-[0_0_10px_#fff] hover:shadow-[0_0_20px_#88C200] transition-shadow" />
+                  <Icon icon={icon as any} className="h-40 w-40 bg-white p-4 rounded-lg shadow-[0_0_10px_#fff] hover:shadow-[0_0_20px_#88C200] transition-all hover:scale-105 duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -149,7 +149,7 @@ const NvidiaProgramSection = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.65 }}
-              className="text-3xl font-bold text-[#88C200] text-center"
+              className="text-3xl font-bold text-[#a4eb00] text-center"
             >
               {nvidiaBenefit.title}
             </motion.h2>
@@ -162,9 +162,9 @@ const NvidiaProgramSection = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  className="bg-gradient-to-br lg:max-w-[400px] max-w-[300px] from-gray-50 to-green-50/50 rounded-xl p-6 shadow-lg border border-green-200/30 hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-br lg:max-w-[400px] max-w-[300px] from-white to-green-50 rounded-xl p-6 shadow-lg border border-green-200/30 hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
-                  <h3 className="text-lg font-bold text-[#638d01] mb-3">
+                  <h3 className="text-lg font-bold text-[#88C200] mb-3">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-700 text-sm leading-relaxed">
@@ -181,7 +181,7 @@ const NvidiaProgramSection = () => {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="w-full mt-12"
             >
-              <h3 className="text-2xl font-bold text-[#88C200]  text-center mb-6">
+              <h3 className="text-2xl font-bold text-[#a4eb00]  text-center mb-6">
                 {nvidiaBenefit.income.title}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -191,11 +191,11 @@ const NvidiaProgramSection = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
-                    className="bg-gradient-to-br from-[#577a03] to-[#a1ce38] rounded-xl p-6 border-2 border-[#88C200]/30 hover:border-[#88C200]/50 transition-all duration-300"
+                    className="bg-gradient-to-br from-[#ffffff] to-[#ffffff] rounded-xl p-6 border-2 border-[#88C200]/30 hover:border-[#88C200]/50 transition-all duration-300"
                   >
                     <div className="space-y-3">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold text-[#88C200] bg-white/80 px-3 py-1 rounded-full">
+                        <span className="text-sm font-semibold bg-[#88C200] text-white px-3 py-1 rounded-full">
                           {level.level}
                         </span>
                         {level.experience && (

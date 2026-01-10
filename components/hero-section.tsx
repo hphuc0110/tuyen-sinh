@@ -44,7 +44,7 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance bg-gradient-to-r from-[#4F8FF6] to-[#3B7AE6] bg-clip-text text-transparent">
-              Chương trình Đào Tạo AI toàn diện cho THPT – Theo chuẩn NVIDIA DLI, cam kết chứng chỉ NVIDIA
+              Chương trình Đào Tạo AI toàn diện cho THPT
             </h1>
 
             <div className="flex flex-col gap-4 pt-4">

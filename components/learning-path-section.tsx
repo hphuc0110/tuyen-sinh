@@ -74,7 +74,7 @@ const LearningPathSection = ({
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75, ease: "easeOut" }}
-          className="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-6 px-4"
+          className="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-6 px-4 mb-8 lg:mb-12"
         >
           {/* Title */}
           <motion.h2
