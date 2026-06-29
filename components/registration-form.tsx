@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -12,6 +12,7 @@ import { Loader2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 export default function RegistrationForm() {
+  const prefersReducedMotion = useReducedMotion()
   const { toast } = useToast()
   const router = useRouter()
   const [formData, setFormData] = useState({
@@ -132,23 +133,23 @@ export default function RegistrationForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
       className="relative"
     >
 
-      <div className="bg-linear-to-br from-[#4F8FF6] via-[#5A9FFF] to-[#3B7AE6] rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-white/20">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center text-balance drop-shadow-lg">
-          ĐĂNG KÝ TƯ VẤN 
-          <br />
+      <div className="bg-linear-to-br from-[#4F8FF6] via-[#5A9FFF] to-[#3B7AE6] rounded-2xl border-2 border-white/20 p-4 shadow-xl sm:rounded-3xl sm:p-6 sm:shadow-2xl md:p-10">
+        <h2 className="mb-4 text-balance text-center text-lg font-bold text-white drop-shadow-lg sm:mb-6 sm:text-2xl md:mb-8 md:text-3xl">
+          ĐĂNG KÝ TƯ VẤN
+          <br className="sm:hidden" />
+          <span className="hidden sm:inline"> </span>
           LỘ TRÌNH & KHÓA HỌC
         </h2>
-        
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="studentName" className="text-white font-semibold">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+          <div className="space-y-1.5 sm:space-y-2">
+            <Label htmlFor="studentName" className="text-sm font-semibold text-white sm:text-base">
               1. Họ và tên Phụ huynh:{" "}
               <span className="text-red-300">*</span>
             </Label>
@@ -172,8 +173,8 @@ export default function RegistrationForm() {
             )}
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="phone" className="text-white font-semibold">
+          <div className="space-y-1.5 sm:space-y-2">
+            <Label htmlFor="phone" className="text-sm font-semibold text-white sm:text-base">
               2. Số điện thoại:{" "}
               <span className="text-red-300">*</span>
             </Label>
@@ -198,8 +199,8 @@ export default function RegistrationForm() {
             )}
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-white font-semibold">
+          <div className="space-y-1.5 sm:space-y-2">
+            <Label htmlFor="email" className="text-sm font-semibold text-white sm:text-base">
               3. Email: <span className="text-red-300">*</span>
             </Label>
             <Input
@@ -223,8 +224,8 @@ export default function RegistrationForm() {
             )}
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="parentName" className="text-white font-semibold">
+          <div className="space-y-1.5 sm:space-y-2">
+            <Label htmlFor="parentName" className="text-sm font-semibold text-white sm:text-base">
               4. Họ và tên Học sinh: <span className="text-red-300">*</span>
             </Label>
             <Input
@@ -247,8 +248,8 @@ export default function RegistrationForm() {
             )}
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="school" className="text-white font-semibold">
+          <div className="space-y-1.5 sm:space-y-2">
+            <Label htmlFor="school" className="text-sm font-semibold text-white sm:text-base">
               5. Trường đang theo học: <span className="text-red-300">*</span>
             </Label>
             <Input
@@ -276,7 +277,7 @@ export default function RegistrationForm() {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-linear-to-r from-white to-gray-50 text-[#4F8FF6] hover:from-gray-50 hover:to-white font-bold text-lg py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all border-2 border-white/50 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="h-auto min-h-11 w-full whitespace-normal rounded-xl border-2 border-white/50 bg-linear-to-r from-white to-gray-50 px-3 py-3 text-sm font-bold leading-snug text-[#4F8FF6] shadow-xl transition-all hover:from-gray-50 hover:to-white hover:shadow-2xl disabled:cursor-not-allowed disabled:opacity-50 sm:min-h-12 sm:rounded-2xl sm:py-5 sm:text-base md:text-lg"
             >
               {isSubmitting ? (
                 <>
